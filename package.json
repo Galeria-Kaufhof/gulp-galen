@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "name": "gulp-galen",
+  "description": "A gulp-plugin for using the galen-framework within a gulp-based build toolchain",
+  "homepage": "https://github.com/Galeria-Kaufhof/gulp-galen",
+  "dependencies": {
+    "through": "^2.3.8"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Galeria-Kaufhof/gulp-galen.git"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "author": "Galeria Kaufhof GmbH",
+  "license": "MIT"
+}
