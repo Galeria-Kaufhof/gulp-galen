@@ -47,3 +47,13 @@ This options apply to both `check` and `test`.
 * `testngreport`: path to xml file in which Galen should write TestNG report
 * `jsonreport`: path to folder in which Galen should generate JSON reports
 * `parallel`: Allow multiple parallel galen processes (not to confuse with `parallel-tests` doing the parallelization in one galen process)
+
+## Excamples
+
+Run some gspec against google.com:
+
+    gulp.src('/**/*.gspec').pipe(gulpGalen.check(url: 'https://www.google.com'));
+
+Run some JavaScript based test suites:
+
+    gulp.src('/test/galen/*.js').pipe(gukpGalen.test());
