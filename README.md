@@ -1,2 +1,2 @@
 # gulp-galen
-gulp-plugin for using galen framework in gulp-based build toolchain
+A gulp-plugin for using the galen-framework within a gulp-based build toolchain.
