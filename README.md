@@ -4,16 +4,50 @@ A gulp plugin for using the galen-framework within a gulp based build toolchain.
 
 ## Installation
 
-    npm install gulp-galen
+```Shell
+npm install gulp-galen
+```
 
+Galen needs to be installed on the system (it isn't bundleled with `npm install --production`). You
+could do this with:
 
-Galen needs to be installed on the system. You could do this with:
+```Shell
+npm install -g galenframework-cli
+```
 
-    npm install -g galenframework-cli
+If this doesn't install galen to `/usr/local/bin/galen` use the `galenPath` option to specify the
+correct path:
+
+```JavaScript
+gulpGalen.check({galenPath: '/some/other/path/to/galen'})
+```
+
+### Bundling Galen
+
+When you're **not** using the `--production` mode you can use the bundeled galen by using the
+`galenPath` option:
+
+```JavaScript
+gulpGalen.check({galenPath: './node_modules/gulp-galen/node_modules/.bin/galen'})
+```
+
+Another alternative it to add `galenframework-cli` into you project's dependencies:
+
+```Shell
+npm install galenframework-cli --save
+```
+
+Then you could use the `galenPath` option as follows:
+
+```JavaScript
+gulpGalen.check({galenPath: './node_modules/.bin/galen'})
+```
 
 ## Usage
 
-    var gulpGalen = require('gulp-galen');
+```JavaScript
+var gulpGalen = require('gulp-galen');
+```
 
 This provides two gulp stream constructors:
 
@@ -52,12 +86,16 @@ This options apply to both `check` and `test`.
 
 Run some gspec against google.com:
 
-    gulp.task("test:galen", function() {
-        gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check(url: 'https://www.google.com'));
-    });
+```JavaScript
+gulp.task("test:galen", function() {
+  gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check(url: 'https://www.google.com'));
+});
+```
 
 Run some JavaScript based test suites:
 
-    gulp.task("test:galen", function() {
-      gulp.src('test/galen/**/*.js').pipe(gukpGalen.test());
-    });
+```JavaScript
+gulp.task("test:galen", function() {
+  gulp.src('test/galen/**/*.js').pipe(gukpGalen.test());
+});
+```
