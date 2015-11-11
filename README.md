@@ -87,6 +87,8 @@ This options apply to both `check` and `test`.
 Run some gspec against google.com:
 
 ```JavaScript
+var gulpGalen = require('gulp-galen');
+
 gulp.task("test:galen", function() {
   gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check(url: 'https://www.google.com'));
 });
@@ -95,6 +97,8 @@ gulp.task("test:galen", function() {
 Run some JavaScript based test suites:
 
 ```JavaScript
+var gulpGalen = require('gulp-galen');
+
 gulp.task("test:galen", function() {
   gulp.src('test/galen/**/*.js').pipe(gukpGalen.test());
 });
