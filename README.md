@@ -77,6 +77,7 @@ This provides two gulp stream constructors:
 This options apply to both `check` and `test`.
 
 * `galenPath`: if other then /usr/local/bin/galen
+* `properties`: an object specifing properties (like `galen.browserFactory.selenium.grid.url`) to pass into galen
 * `htmlreport`: path to folder in which Galen should generate HTML reports
 * `testngreport`: path to xml file in which Galen should write TestNG report
 * `jsonreport`: path to folder in which Galen should generate JSON reports
@@ -101,5 +102,22 @@ var gulpGalen = require('gulp-galen');
 
 gulp.task("test:galen", function() {
   gulp.src('test/galen/**/*.js').pipe(gukpGalen.test());
+});
+```
+
+Run some JavaScript based test suites against a Selenium Grid:
+
+```JavaScript
+var gulpGalen = require('gulp-galen');
+
+var galenProperties = {
+  'galen.browserFactory.selenium.runInGrid': true,
+  'galen.browserFactory.selenium.grid.url': 'http://example.com:4444/wd/hub'
+};
+
+gulp.task("test:galen", function() {
+  gulp
+    .src('test/galen/**/*.js')
+    .pipe(gukpGalen.test(properties: galenProperties));
 });
 ```
