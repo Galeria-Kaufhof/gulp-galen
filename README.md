@@ -2,6 +2,8 @@
 
 A gulp plugin for using the galen-framework within a gulp based build toolchain.
 
+[![npm version](https://badge.fury.io/js/gulp-galen.svg)](https://www.npmjs.com/package/gulp-galen)
+
 ## Installation
 
 ```Shell
