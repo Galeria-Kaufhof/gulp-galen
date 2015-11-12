@@ -58,6 +58,19 @@ This provides two gulp stream constructors:
 
 ## Options
 
+All String options support some simple placeholders to be filled with information about 
+the current file:
+
+* `{basename}`: The current file's `path.basename()` 
+* `{relative}`: The current file's relative file name
+* `{path}`: The current file's full path
+
+This might especially be useful when generating repots. Example:
+
+```JavaScript
+gulpGalen.check((htmlreport: "reports/{relative}"))
+```
+
 ### `check` options
 
 * `url`: a URL of page for Galen to test on

@@ -7,9 +7,10 @@
     "through": "^2.3.8"
   },
   "devDependencies": {
-    "galenframework-cli": "^2.1.2",
     "event-stream": "^3.3.2",
-    "gulp": "^3.9.0"
+    "galenframework-cli": "^2.1.2",
+    "gulp": "^3.9.0",
+    "rimraf": "^2.4.3"
   },
   "engines": {
     "node": ">=0.8.0"

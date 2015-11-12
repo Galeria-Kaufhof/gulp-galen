@@ -1,9 +1,11 @@
-/* globals describe, it, xit */
+/* globals describe, it, xit, before, after */
 
 var assert = require("assert");
 var gulp = require("gulp");
 var es = require("event-stream");
 var util = require("util");
+var fs = require("fs");
+var rimraf = require("rimraf");
 
 var gulpGalen = require('../index.js');
 
@@ -38,6 +40,34 @@ describe("gulp-galen's code functionality", function () {
         .on("error", function () {
           done();
         }));
+  });
+
+});
+
+describe("gulp-galen's extended functionality", function () {
+
+  this.timeout(30000);
+
+  before(function(done) {
+    rimraf("./tmp/test-reports", done);
+  });
+
+  it("should support some variables based upcon the current file", function (done) {
+    gulp.src("**/specs/google1.gspec")
+      .pipe(gulpGalen.check({
+        url: "https://www.google.com",
+        size: "800x600",
+        galenPath: "./node_modules/.bin/galen",
+        testngreport: "./tmp/test-reports/testng-{basename}.xml"
+      }))
+      .pipe(es.writeArray(function (err, arr) {
+        var fn = "./tmp/test-reports/testng-google1.gspec.xml";
+        fs.stat(fn, function(err, stats) {
+          assert(!err, "File not found: " + fn);
+          assert(stats.isFile(), "Is no file: " + fn);
+          done();
+        });
+      }));
   });
 
 });
