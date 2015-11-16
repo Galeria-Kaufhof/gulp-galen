@@ -116,7 +116,7 @@ Run some JavaScript based test suites:
 var gulpGalen = require('gulp-galen');
 
 gulp.task("test:galen", function() {
-  gulp.src('test/galen/**/*.js').pipe(gukpGalen.test());
+  gulp.src('test/galen/**/*.js').pipe(gulpGalen.test());
 });
 ```
 
@@ -133,6 +133,8 @@ var galenProperties = {
 gulp.task("test:galen", function() {
   gulp
     .src('test/galen/**/*.js')
-    .pipe(gukpGalen.test(properties: galenProperties));
+    .pipe(gulpGalen.test({
+      properties: galenProperties
+    }));
 });
 ```
