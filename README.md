@@ -53,8 +53,8 @@ var gulpGalen = require('gulp-galen');
 
 This provides two gulp stream constructors:
 
-* `gulpGalen.check(options)`: runs a speficied .gspec aganst a given url.
-* `gulpGalen.test(options)`: runs a test against a given testsuite (JavaScript based or Galen test suite style)
+* `gulpGalen.check(options, processOptions)`: runs a speficied .gspec aganst a given url.
+* `gulpGalen.test(options, processOptions)`: runs a test against a given testsuite (JavaScript based or Galen test suite style)
 
 ## Options
 
@@ -70,6 +70,13 @@ This might especially be useful when generating repots. Example:
 ```JavaScript
 gulpGalen.check((htmlreport: "reports/{relative}"))
 ```
+
+
+## ProcessOptions
+
+All options for the created child processes
+
+* `cwd`: change the working directory for the created processes
 
 ### `check` options
 
@@ -100,17 +107,21 @@ This options apply to both `check` and `test`.
 
 ## Examples
 
-Run some gspec against google.com:
+### Run some gspec against google.com:
 
 ```JavaScript
 var gulpGalen = require('gulp-galen');
 
 gulp.task("test:galen", function() {
-  gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check(url: 'https://www.google.com'));
+  gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check({
+    url: 'https://www.google.com'
+  },{
+    cwd:'test/galen/'
+  }));
 });
 ```
 
-Run some JavaScript based test suites:
+### Run some JavaScript based test suites:
 
 ```JavaScript
 var gulpGalen = require('gulp-galen');
@@ -135,6 +146,8 @@ gulp.task("test:galen", function() {
     .src('test/galen/**/*.js')
     .pipe(gulpGalen.test({
       properties: galenProperties
+    },{
+      cwd:'test/galen/'
     }));
 });
 ```
