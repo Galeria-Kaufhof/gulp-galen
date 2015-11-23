@@ -58,10 +58,10 @@ This provides two gulp stream constructors:
 
 ## Options
 
-All String options support some simple placeholders to be filled with information about 
+All String options support some simple placeholders to be filled with information about
 the current file:
 
-* `{basename}`: The current file's `path.basename()` 
+* `{basename}`: The current file's `path.basename()`
 * `{relative}`: The current file's relative file name
 * `{path}`: The current file's full path
 
@@ -70,13 +70,6 @@ This might especially be useful when generating repots. Example:
 ```JavaScript
 gulpGalen.check((htmlreport: "reports/{relative}"))
 ```
-
-
-## ProcessOptions
-
-All options for the created child processes
-
-* `cwd`: change the working directory for the created processes
 
 ### `check` options
 
@@ -99,6 +92,7 @@ All options for the created child processes
 This options apply to both `check` and `test`.
 
 * `galenPath`: if other then /usr/local/bin/galen
+* `cwd`: change the working directory for the created processes
 * `properties`: an object specifing properties (like `galen.browserFactory.selenium.grid.url`) to pass into galen
 * `htmlreport`: path to folder in which Galen should generate HTML reports
 * `testngreport`: path to xml file in which Galen should write TestNG report
@@ -114,9 +108,8 @@ var gulpGalen = require('gulp-galen');
 
 gulp.task("test:galen", function() {
   gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check({
-    url: 'https://www.google.com'
-  },{
-    cwd:'test/galen/'
+    url: 'https://www.google.com',
+    cwd: 'test/galen/'
   }));
 });
 ```
@@ -145,9 +138,8 @@ gulp.task("test:galen", function() {
   gulp
     .src('test/galen/**/*.js')
     .pipe(gulpGalen.test({
-      properties: galenProperties
-    },{
-      cwd:'test/galen/'
+      properties: galenProperties,
+      cwd: 'test/galen/'
     }));
 });
 ```
