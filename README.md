@@ -96,6 +96,7 @@ This options apply to both `check` and `test`.
 * `properties`: an object specifing properties (like `galen.browserFactory.selenium.grid.url`) to pass into galen
 * `htmlreport`: path to folder in which Galen should generate HTML reports
 * `testngreport`: path to xml file in which Galen should write TestNG report
+* `junitreport `: path to xml file in which Galen should write JUnit report
 * `jsonreport`: path to folder in which Galen should generate JSON reports
 * `parallel`: Allow multiple parallel galen processes (not to confuse with `parallel-tests` doing the parallelization in one galen process)
 
