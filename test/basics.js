@@ -54,12 +54,12 @@ describe("gulp-galen", function () {
       rimraf("./tmp/test-reports", done);
     });
 
-    it("should support some variables based upcon the current file", function (done) {
+    it("should support some variables based upon the current file", function (done) {
       gulp.src("**/specs/google1.gspec")
         .pipe(gulpGalen.check({
           url: "https://www.google.com",
           size: "800x600",
-          galenPath: "./node_modules/.bin/galen",
+          galenPath: "./node_modules/galenframework/bin/galen",
           testngreport: "./tmp/test-reports/testng-{basename}.xml"
         }))
         .pipe(es.writeArray(function (err, arr) {
