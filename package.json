@@ -1,5 +1,5 @@
 {
-  "version": "1.0.8",
+  "version": "1.0.9",
   "name": "gulp-galen",
   "description": "A gulp-plugin for using the galen-framework within a gulp-based build toolchain",
   "homepage": "https://github.com/Galeria-Kaufhof/gulp-galen",
