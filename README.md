@@ -1,5 +1,7 @@
 # gulp-galen
 
+[![Build Status](https://travis-ci.org/Galeria-Kaufhof/gulp-galen.svg?branch=master)](https://travis-ci.org/Galeria-Kaufhof/gulp-galen)
+
 A gulp plugin for using the galen-framework within a gulp based build toolchain.
 
 [![npm version](https://badge.fury.io/js/gulp-galen.svg)](https://www.npmjs.com/package/gulp-galen)
