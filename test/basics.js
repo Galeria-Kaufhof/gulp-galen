@@ -18,7 +18,7 @@ describe("gulp-galen", function () {
     var options = {
       url: "https://www.google.com",
       size: "800x600",
-      galenPath: "./node_modules/.bin/galen"
+      galenPath: "./node_modules/galenframework/bin/galen"
     };
 
     it("should iterate over some gspecs", function (done) {
