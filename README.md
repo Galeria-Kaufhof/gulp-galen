@@ -1,10 +1,11 @@
 # gulp-galen
 
+[![npm version](https://badge.fury.io/js/gulp-galen.svg)](https://www.npmjs.com/package/gulp-galen)
 [![Build Status](https://travis-ci.org/Galeria-Kaufhof/gulp-galen.svg?branch=master)](https://travis-ci.org/Galeria-Kaufhof/gulp-galen)
+[![Gitter Chat](https://camo.githubusercontent.com/7d924c483d0d9dff10763921aea2038e660e1252/68747470733a2f2f6261646765732e6769747465722e696d2f67697474657248512f6769747465722e737667)](https://gitter.im/hypery2k/galenframework-cli)
 
 A gulp plugin for using the galen-framework within a gulp based build toolchain.
 
-[![npm version](https://badge.fury.io/js/gulp-galen.svg)](https://www.npmjs.com/package/gulp-galen)
 
 ## Installation
 
