@@ -1,31 +1,46 @@
 {
-  "version": "1.0.9",
-  "name": "gulp-galen",
-  "description": "A gulp-plugin for using the galen-framework within a gulp-based build toolchain",
-  "homepage": "https://github.com/Galeria-Kaufhof/gulp-galen",
-  "dependencies": {
-    "through": "^2.3.8"
-  },
-  "devDependencies": {
-    "event-stream": "^3.3.2",
-    "galenframework": "^2.2.0",
-    "gulp": "^3.9.0",
-    "rimraf": "^2.4.3"
-  },
-  "engines": {
-    "node": ">=0.8.0"
-  },
+  "name": "gulp-galenframework",
+  "version": "1.9.0-dev",
+  "description": "Gulp plugin for Galen Framework",
+  "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Galeria-Kaufhof/gulp-galen.git"
+    "url": "https://github.com/hypery2k/gulp-galenframework"
   },
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
+  "keywords": [
+    "grunt",
+    "galen",
+    "galenframework",
+    "responsive",
+    "test",
+    "testing",
+    "webdriver",
+    "selenium",
+    "TDD",
+    "BDD"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "author": {
+    "name": "Martin Reinhardt"
+  },
+  "contributors": [
+    {
+      "name": "GALERIA Kaufhof GmbH"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "through": "2.3.8"
+  },
+  "devDependencies": {
+    "event-stream": "3.3.2",
+    "galenframework": "2.2.1",
+    "gulp": "3.9.0",
+    "rimraf": "2.4.3"
   },
   "scripts": {
     "test": "jshint *.js lib/*.js test/*.js && mocha"
-  },
-  "author": "GALERIA Kaufhof GmbH",
-  "license": "MIT"
+  }
 }
