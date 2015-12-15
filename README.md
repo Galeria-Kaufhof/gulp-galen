@@ -1,11 +1,16 @@
-# gulp-galen
+# Gulp plugin for the Galenframework
 
-[![npm version](https://badge.fury.io/js/gulp-galen.svg)](https://www.npmjs.com/package/gulp-galen)
-[![Build Status](https://travis-ci.org/Galeria-Kaufhof/gulp-galen.svg?branch=master)](https://travis-ci.org/Galeria-Kaufhof/gulp-galen)
-[![Gitter Chat](https://camo.githubusercontent.com/7d924c483d0d9dff10763921aea2038e660e1252/68747470733a2f2f6261646765732e6769747465722e696d2f67697474657248512f6769747465722e737667)](https://gitter.im/hypery2k/galenframework-cli)
+[Galen](http://galenframework.com) allows automated testing of look and feel for your responsive websites.
 
-A gulp plugin for using the galen-framework within a gulp based build toolchain.
+> Gulp plugin for [Galen](http://galenframework.com/) testing framework
 
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE) [![npm version](https://badge.fury.io/js/gulp-galenframework.svg)](http://badge.fury.io/js/grunt-galenframework)
+
+[![NPM](https://nodei.co/npm/gulp-galenframework.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/grunt-galenframework/)
+
+This module downloads the GalenFramework for you
+
+*Warning* - Galen framework requires Java runtime environment to work. Java is ***not*** included in this module.
 
 ## Installation
 
