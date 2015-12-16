@@ -108,11 +108,11 @@ This options apply to both `check` and `test`.
 ```JavaScript
 var gulpGalen = require('gulp-galenframework');
 
-gulp.task("test:galen", function() {
+gulp.task("test:galen", function(done) {
   gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check({
     url: 'https://www.google.com',
     cwd: 'test/galen/'
-  }));
+  })).once('close', done);
 });
 ```
 
@@ -121,8 +121,8 @@ gulp.task("test:galen", function() {
 ```JavaScript
 var gulpGalen = require('gulp-galenframework');
 
-gulp.task("test:galen", function() {
-  gulp.src('test/galen/**/*.js').pipe(gulpGalen.test());
+gulp.task("test:galen", function(done) {
+  gulp.src('test/galen/**/*.js').pipe(gulpGalen.test()).once('close', done);
 });
 ```
 
@@ -136,12 +136,13 @@ var galenProperties = {
   'galen.browserFactory.selenium.grid.url': 'http://example.com:4444/wd/hub'
 };
 
-gulp.task("test:galen", function() {
+gulp.task("test:galen", function(done) {
   gulp
     .src('test/galen/**/*.js')
     .pipe(gulpGalen.test({
-      properties: galenProperties,
-      cwd: 'test/galen/'
-    }));
+		  'htmlreport': __dirname + '/reports/layout-tests',
+      'properties': galenProperties,
+      'cwd': 'test/galen/'
+    })).once('close', done);
 });
 ```
