@@ -15,17 +15,10 @@ This module downloads the GalenFramework for you
 ## Installation
 
 ```Shell
-npm install gulp-galen
+npm install gulp-galenframework
 ```
 
-Galen needs to be installed on the system (it isn't bundleled with `npm install --production`). You
-could do this with:
-
-```Shell
-npm install -g galenframework-cli
-```
-
-If this doesn't install galen to `/usr/local/bin/galen` use the `galenPath` option to specify the
+If this doesn't want to use the provided galen version use the `galenPath` option to specify the
 correct path:
 
 ```JavaScript
@@ -38,7 +31,7 @@ When you're **not** using the `--production` mode you can use the bundeled galen
 `galenPath` option:
 
 ```JavaScript
-gulpGalen.check({galenPath: './node_modules/gulp-galen/node_modules/.bin/galen'})
+gulpGalen.check({galenPath: './node_modules/gulp-galenframework/node_modules/.bin/galen'})
 ```
 
 Another alternative it to add `galenframework-cli` into you project's dependencies:
@@ -56,7 +49,7 @@ gulpGalen.check({galenPath: './node_modules/.bin/galen'})
 ## Usage
 
 ```JavaScript
-var gulpGalen = require('gulp-galen');
+var gulpGalen = require('gulp-galenframework');
 ```
 
 This provides two gulp stream constructors:
@@ -113,7 +106,7 @@ This options apply to both `check` and `test`.
 ### Run some gspec against google.com:
 
 ```JavaScript
-var gulpGalen = require('gulp-galen');
+var gulpGalen = require('gulp-galenframework');
 
 gulp.task("test:galen", function() {
   gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check({
@@ -126,7 +119,7 @@ gulp.task("test:galen", function() {
 ### Run some JavaScript based test suites:
 
 ```JavaScript
-var gulpGalen = require('gulp-galen');
+var gulpGalen = require('gulp-galenframework');
 
 gulp.task("test:galen", function() {
   gulp.src('test/galen/**/*.js').pipe(gulpGalen.test());
@@ -136,7 +129,7 @@ gulp.task("test:galen", function() {
 Run some JavaScript based test suites against a Selenium Grid:
 
 ```JavaScript
-var gulpGalen = require('gulp-galen');
+var gulpGalen = require('gulp-galenframework');
 
 var galenProperties = {
   'galen.browserFactory.selenium.runInGrid': true,
