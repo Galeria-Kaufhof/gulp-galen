@@ -4,7 +4,7 @@
 
 > Gulp plugin for [Galen](http://galenframework.com/) testing framework
 
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE) [![npm version](https://badge.fury.io/js/gulp-galenframework.svg)](http://badge.fury.io/js/grunt-galenframework)
+[![Build Status](https://travis-ci.org/hypery2k/gulp-galenframework.svg)](https://travis-ci.org/hypery2k/gulp-galenframework) [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE) [![npm version](https://badge.fury.io/js/gulp-galenframework.svg)](http://badge.fury.io/js/grunt-galenframework)
 
 [![NPM](https://nodei.co/npm/gulp-galenframework.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/grunt-galenframework/)
 
