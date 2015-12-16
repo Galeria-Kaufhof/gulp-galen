@@ -1,6 +1,6 @@
 {
   "name": "gulp-galenframework",
-  "version": "2.1.0-dev",
+  "version": "2.0.1",
   "description": "Gulp plugin for Galen Framework",
   "main": "index.js",
   "repository": {
@@ -32,11 +32,11 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "galenframework": "2.2.1",
     "through": "2.3.8"
   },
   "devDependencies": {
     "event-stream": "3.3.2",
-    "galenframework": "2.2.1",
     "gulp": "3.9.0",
     "rimraf": "2.4.3"
   },
