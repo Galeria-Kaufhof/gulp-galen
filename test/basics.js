@@ -23,24 +23,27 @@ describe("gulp-galen", function () {
 
         it("should iterate over some gspecs", function (done) {
             gulp.src("**/specs/google_success?.gspec")
-                .pipe(gulpGalen.check(options))
+                .pipe(gulpGalen.check(options, done))
                 .pipe(es.writeArray(function (err, arr) {
                     assert(!err, "There where errors present");
                     assert(arr, "Result missing");
                     for (var i = 0; i < 2; i++) {
                         assert(arr[i].path.match(/specs\/google_success.\.gspec$/), "File's path didn't end with specs/google_success?.gspec: '" + arr[i].path + "'");
                     }
-                    done();
                 }));
         });
 
         it("should handle failed specs", function (done) {
-            gulp.src("**/specs/google_failing.gspec")
-                .pipe(gulpGalen
-                    .check(options)
-                    .on("error", function () {
-                        done();
-                    }));
+            try {
+                expect(
+                    gulp.src("**/specs/google_failing.gspec")
+                        .pipe(gulpGalen.check(options, function () {
+                            //ignore
+                        }))).toThrow(new Error("Unexpected error!"));
+                done();
+            } catch (e) {
+                done();
+            }
         });
 
     });
@@ -61,16 +64,16 @@ describe("gulp-galen", function () {
                         size: "800x600",
                         galenPath: "./node_modules/galenframework/bin/galen",
                         testngreport: "./tmp/test-reports/testng-{basename}.xml"
-                    })).once('close', function () {
-                    es.writeArray(function (err, arr) {
-                        var fn = "./tmp/test-reports/testng-google_success1.gspec.xml";
-                        fs.stat(fn, function (err, stats) {
-                            assert(!err, "File not found: " + fn);
-                            assert(stats.isFile(), "Is no file: " + fn);
-                            done();
+                    }, function (error) {
+                        es.writeArray(function (err, arr) {
+                            var fn = "./tmp/test-reports/testng-google_success1.gspec.xml";
+                            fs.stat(fn, function (err, stats) {
+                                assert(!err, "File not found: " + fn);
+                                assert(stats.isFile(), "Is no file: " + fn);
+                            });
                         });
-                    });
-                });
+                        done();
+                    }));
         });
 
     });
