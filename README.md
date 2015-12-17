@@ -112,7 +112,7 @@ gulp.task("test:galen", function(done) {
   gulp.src('test/galen/**/*.gspec').pipe(gulpGalen.check({
     url: 'https://www.google.com',
     cwd: 'test/galen/'
-  })).once('close', done);
+  }, done));
 });
 ```
 
@@ -122,7 +122,7 @@ gulp.task("test:galen", function(done) {
 var gulpGalen = require('gulp-galenframework');
 
 gulp.task("test:galen", function(done) {
-  gulp.src('test/galen/**/*.js').pipe(gulpGalen.test()).once('close', done);
+  gulp.src('test/galen/**/*.js').pipe(gulpGalen.test({}, done));
 });
 ```
 
@@ -143,6 +143,6 @@ gulp.task("test:galen", function(done) {
 		  'htmlreport': __dirname + '/reports/layout-tests',
       'properties': galenProperties,
       'cwd': 'test/galen/'
-    })).once('close', done);
+    }, done));
 });
 ```
