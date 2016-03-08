@@ -13,14 +13,14 @@ A gulp plugin for using the galen-framework within a gulp based build toolchain.
 npm install gulp-galen
 ```
 
-Galen needs to be installed on the system (it isn't bundleled with `npm install --production`). You
+Galen needs to be installed on the system (it isn’t bundled with `npm install --production`). You
 could do this with:
 
 ```Shell
 npm install -g galenframework-cli
 ```
 
-If this doesn't install galen to `/usr/local/bin/galen` use the `galenPath` option to specify the
+If this doesn’t install galen to `/usr/local/bin/galen` use the `galenPath` option to specify the
 correct path:
 
 ```JavaScript
@@ -29,14 +29,14 @@ gulpGalen.check({galenPath: '/some/other/path/to/galen'})
 
 ### Bundling Galen
 
-When you're **not** using the `--production` mode you can use the bundeled galen by using the
+When you’re **not** using the `--production` mode you can use the bundled galen by using the
 `galenPath` option:
 
 ```JavaScript
 gulpGalen.check({galenPath: './node_modules/gulp-galen/node_modules/.bin/galen'})
 ```
 
-Another alternative it to add `galenframework-cli` into you project's dependencies:
+Another alternative it to add `galenframework-cli` into you project’s dependencies:
 
 ```Shell
 npm install galenframework-cli --save
@@ -56,7 +56,7 @@ var gulpGalen = require('gulp-galen');
 
 This provides two gulp stream constructors:
 
-* `gulpGalen.check(options, processOptions)`: runs a speficied .gspec aganst a given url.
+* `gulpGalen.check(options, processOptions)`: runs a specified .gspec against a given url.
 * `gulpGalen.test(options, processOptions)`: runs a test against a given testsuite (JavaScript based or Galen test suite style)
 
 ## Options
@@ -64,11 +64,11 @@ This provides two gulp stream constructors:
 All String options support some simple placeholders to be filled with information about
 the current file:
 
-* `{basename}`: The current file's `path.basename()`
-* `{relative}`: The current file's relative file name
-* `{path}`: The current file's full path
+* `{basename}`: The current file’s `path.basename()`
+* `{relative}`: The current file’s relative file name
+* `{path}`: The current file’s full path
 
-This might especially be useful when generating repots. Example:
+This might especially be useful when generating reports. Example:
 
 ```JavaScript
 gulpGalen.check((htmlreport: "reports/{relative}"))
@@ -96,7 +96,7 @@ This options apply to both `check` and `test`.
 
 * `galenPath`: if other then /usr/local/bin/galen
 * `cwd`: change the working directory for the created processes
-* `properties`: an object specifing properties (like `galen.browserFactory.selenium.grid.url`) to pass into galen
+* `properties`: an object specifying properties (like `galen.browserFactory.selenium.grid.url`) to pass into galen
 * `htmlreport`: path to folder in which Galen should generate HTML reports
 * `testngreport`: path to xml file in which Galen should write TestNG report
 * `junitreport `: path to xml file in which Galen should write JUnit report
