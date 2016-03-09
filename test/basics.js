@@ -17,8 +17,7 @@ describe("gulp-galen", function () {
 
     var options = {
       url: "https://www.google.com",
-      size: "800x600",
-      galenPath: "./node_modules/galenframework/bin/galen"
+      size: "800x600"
     };
 
     it("should iterate over some gspecs", function (done) {
@@ -59,7 +58,6 @@ describe("gulp-galen", function () {
         .pipe(gulpGalen.check({
           url: "https://www.google.com",
           size: "800x600",
-          galenPath: "./node_modules/galenframework/bin/galen",
           testngreport: "./tmp/test-reports/testng-{basename}.xml"
         }))
         .pipe(es.writeArray(function (err, arr) {
