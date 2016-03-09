@@ -10,42 +10,14 @@ A gulp plugin for using the galen-framework within a gulp based build toolchain.
 ## Installation
 
 ```Shell
-npm install gulp-galen
+npm install --save-dev gulp-galen
 ```
 
-Galen needs to be installed on the system (it isn’t bundled with `npm install --production`). You
-could do this with:
-
-```Shell
-npm install -g galenframework-cli
-```
-
-If this doesn’t install galen to `/usr/local/bin/galen` use the `galenPath` option to specify the
-correct path:
+`gulp-galen` will search for galen in locally installed packages (`npm install --save-dev galenframework`) and in $PATH. 
+If you have galen in other location use the `galenPath` option to specify the correct path:
 
 ```JavaScript
 gulpGalen.check({galenPath: '/some/other/path/to/galen'})
-```
-
-### Bundling Galen
-
-When you’re **not** using the `--production` mode you can use the bundled galen by using the
-`galenPath` option:
-
-```JavaScript
-gulpGalen.check({galenPath: './node_modules/gulp-galen/node_modules/.bin/galen'})
-```
-
-Another alternative it to add `galenframework-cli` into you project’s dependencies:
-
-```Shell
-npm install galenframework-cli --save
-```
-
-Then you could use the `galenPath` option as follows:
-
-```JavaScript
-gulpGalen.check({galenPath: './node_modules/.bin/galen'})
 ```
 
 ## Usage
