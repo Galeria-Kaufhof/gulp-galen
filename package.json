@@ -5,6 +5,7 @@
   "homepage": "https://github.com/Galeria-Kaufhof/gulp-galen",
   "dependencies": {
     "through": "^2.3.8",
+    "verror": "^1.6.1",
     "which": "^1.2.4"
   },
   "devDependencies": {
